@@ -17,7 +17,7 @@ export default function Header() {
             </div>
             <div className="AuthButtonsSection me-5">
                 {/* <PrimaryButton text={"Login"} icon={"/icons/login.png"} /> */}
-                <button className='py-3 px-12 rounded-md text-sm font-semibold text-white bg-orange-500'>Login</button>
+                <button className='py-3 px-12 rounded-md text-sm font-semibold text-white bg-orange-500 hover:bg-orange-600 transition-all duration-300'>Login</button>
             </div>
         </header>
     )

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/primary/Header'
 import HeroSection from './components/home/HeroSection'
 import Navbar from './components/primary/Navbar'
+import TrendingCollections from './components/home/TrendingCollections'
 
 
 const RouteComponent = () => {
@@ -25,7 +26,7 @@ function App() {
         <div className="mx-13">
 
           <HeroSection />
-
+          <TrendingCollections />
         </div>
 
       </Router>
