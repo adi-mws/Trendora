@@ -3,8 +3,13 @@
 @theme {
     --font-primary: "Raleway", "sans-serif"; 
     --font-secondary: "Rubik", "sans-serif"; 
+    --text-2xs: 12px;
 }
 
 button, a {
     cursor: pointer; 
+}
+
+body {
+    font-family: var(--font-secondary);
 }

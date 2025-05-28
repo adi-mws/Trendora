@@ -84,13 +84,13 @@ export default function Navbar() {
     return (
         <>
             <div className='flex justify-center flex-col items-center relative'>
-                <div className='flex w-full justify-center align-center gap-12 text-sm bg-gray-50 py-4'>
+                <div className='flex w-full justify-center align-center gap-12 text-sm bg-gray-50 py-2'>
                     {Object.keys(navItems).map((item, index) => {
-                        return <p key={index} onMouseOver={() => { setShowNavDropdown(true); setSelectedNav(item) }} className={`hover:text-orange-600 ${selectedNav=== item && showNavDropdown ? 'text-orange-600' : 'text-gray-700'} cursor-pointer flex gap-2 items-center font-semibold`}>{item}</p>
+                        return <p key={index} onMouseOver={() => { setShowNavDropdown(true); setSelectedNav(item) }} className={`hover:text-orange-600 ${selectedNav=== item && showNavDropdown ? 'text-orange-600' : 'text-gray-700'} cursor-pointer flex gap-2 text-xs items-center font-semibold`}>{item}</p>
                     })}
 
                 </div>
-                <ul className={`dropdown w-full shadow-s shadow-gray-100 max-h-40 absolute top-15 py-6 px-8 text-sm text-gray-600 bg-white ${showNavDropdown ? 'flex' : 'hidden'} flex-col flex-wrap align-middle gap-2`} onMouseOver={() => setShowNavDropdown(true)} onMouseOut={() => setShowNavDropdown(false)}>
+                <ul className={`dropdown w-full shadow-s shadow-gray-100 max-h-40 absolute top-8 py-6 px-8 text-2xs text-gray-600 bg-white ${showNavDropdown ? 'flex' : 'hidden'} flex-col flex-wrap align-middle gap-2`} onMouseOver={() => setShowNavDropdown(true)} onMouseOut={() => setShowNavDropdown(false)}>
                     {navItems[selectedNav]?.map((item, index) => {
     
                         return <li ><Link className='hover:underline' to={item?.link}>{item?.name}</Link></li>

@@ -47,7 +47,7 @@ export default function SpecialDeals() {
         </div>
         <div className="item-list flex flex-col gap-8 items-center">
           {specialDealsItems.map((item, index) => (
-            <div className="card-item flex rounded-xl overflow-hidden flex-col bg-[linear-gradient(to_bottom,#F2F4FF,white)] gap-5 pb-5">
+            <div key={index} className="card-item flex rounded-xl overflow-hidden flex-col bg-[linear-gradient(to_bottom,#F2F4FF,white)] gap-5 pb-5">
                 <div className="head-tag">
                   <span className='px-5 py-2 text-white font-semibold text-xs' style={{background: `${item.color}`}}>{item.tag}</span>
                 </div>
