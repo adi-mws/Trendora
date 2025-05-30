@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function NotFound({ item }) {
     return (
-        <div className='w-full h-screen flex items-center flex-col gap-5 justify-center'>
-            <img src="/imgs/not-found.png" alt="not-found" />
-            <p className="text font-primary">{item} Not Found</p>
+        <div className='w-full h-full mt-10 flex items-center flex-col gap-5 justify-center'>
+            <img src="/imgs/not-found.png" alt="not-found" className='text-xs w-80 h-80' />
+            <p className="text font-primary text-xl text-gray-700">{item} Not Found</p>
         </div>
     )
 }

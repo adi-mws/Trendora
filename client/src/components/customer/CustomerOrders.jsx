@@ -227,7 +227,7 @@ export default function CustomerOrders() {
         : orders.filter((item) =>
           item._id.startsWith(searchValue) ||
           item.products.some((product) =>
-            product.name.startsWith(searchValue)
+            product.name,toLowerCase().includes(searchValue.toLowerCase())
           )
         )
     );

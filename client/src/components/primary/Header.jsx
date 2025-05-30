@@ -7,7 +7,7 @@ export default function Header() {
           
             <div className="LogoSection"><img src="/imgs/logo.png" className='w-40 max-w-none' alt="" /></div>
             <div className="NavItemsSection flex gap-2 justify-around items-center sm:w-200">
-                <div className="nav-links hidden items-center gap-10 text-xs md:flex">
+                <div className="nav-links hidden items-center gap-10 text-sm md:flex">
                     <Link to="" className='lg:flex hidden hover:underline'>Our Policies</Link>
                     <Link to="" className='lg:flex hidden hover:underline'>Our Story</Link>
                     <Link to="" className='md:flex hidden hover:underline'>Orders</Link>
