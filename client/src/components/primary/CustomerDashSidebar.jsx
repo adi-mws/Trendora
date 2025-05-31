@@ -12,7 +12,7 @@ export default function CustomerDashSidebar() {
   }
 
   return (
-    <div className='CustomerDashSidebar scrollbar-none flex flex-col overflow-y-scroll shadow-xs shadow-gray-300 w-full h-full'>
+    <div className='CustomerDashSidebar scrollbar-none hidden md:flex flex-col overflow-y-scroll shadow-xs shadow-gray-300 w-full h-full'>
       <ul className='head h-50'>
         <img src="/imgs/logo.png" alt="logo" className='text-xs w-40' />
       </ul>

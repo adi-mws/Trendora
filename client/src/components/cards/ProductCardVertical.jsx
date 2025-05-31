@@ -2,8 +2,8 @@ import React from 'react'
 import { textCutter } from '../../utils/textFunctions'
 export default function ProductCardVertical({ product }) {
   return (
-    <div className="product-card flex-1/3 lg:flex-1/5 p-3 gap-2 shadow-md shadow-gray-200 h-auto flex flex-col rounded-lg">
-      <div className='img relative w-full h-60 overflow-hidden rounded-t-xl'>
+    <div className="product-card flex-1/3 h-120 min-w-30 lg:flex-1/5 p-2 sm:p-3 gap-2 rounded-none max-w-80 text-2xs shadow-xs sm:shadow-md shadow-gray-100 flex flex-col sm:rounded-lg">
+      <div className='img relative w-full h-80 overflow-hidden rounded-t-xl'>
         <button onClick={() => toggleWishlist(product)} className='wishlist-button h-9 w-9 absolute right-1 top-1 rounded-xl p-2 bg-white'>
           {/* Whislist for products */}
           {product.wishlist ?
@@ -16,10 +16,10 @@ export default function ProductCardVertical({ product }) {
       </div>
       {/* Product details for the product Cards */}
 
-      <div className='product-details flex flex-col h-50 font-secondary gap-3'>
+      <div className='product-details flex flex-col h-70 lg:h-50 font-secondary gap-3'>
         <p className="product-name text-sm font-primary">{textCutter(product?.name, 130)}</p>
-        <div className="price-section flex gap-2 items-center">
-          <p className="product-price text-2xl text-gray-600">&#8377;449</p>
+        <div className="price-section flex gap-2 items-center md:flex-nowrap flex-wrap">
+          <p className="product-price text-2xl text-gray-600">&#8377;{product.price}</p>
           <p className='product-mrp line-through font-medium text-gray-500 text-xs'>&#8377;{product.mrp}</p>
           <p className="product-discount text-sm text-gray-700">({product?.discount} off)</p>
         </div>

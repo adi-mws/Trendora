@@ -8,7 +8,7 @@ export default function MainLayout() {
     <>
       <Header />
       <Navbar />
-      <div className='MainLayout mx-13 flex flex-col gap-10'>
+      <div className='MainLayout mx-2 sm:mx-8 lg:mx-13  flex flex-col gap-10'>
         <Outlet />
       </div>
     </>

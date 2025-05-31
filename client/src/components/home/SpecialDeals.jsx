@@ -39,11 +39,11 @@ export default function SpecialDeals() {
   ];
   
   return (
-    <div className='grid grid-cols-2 gap-2'>
+    <div className='lg:grid lg:grid-cols-2 flex flex-col gap-2 mt-10'>
       <div className='flex gap-8 flex-col items-center'>
         <div className="head flex justify-between items-center w-full p-5">
-          <p className="title font-primary text-4xl">Special Deals</p>
-          <p className="countdown-timer font-secondary text-3xl">10:35:52</p>
+          <p className="title font-primary text-3xl lg:text-4xl">Special Deals</p>
+          <p className="countdown-timer font-secondary text-2xl lg:text-3xl">10:35:52</p>
         </div>
         <div className="item-list flex flex-col gap-8 items-center">
           {specialDealsItems.map((item, index) => (
@@ -51,14 +51,14 @@ export default function SpecialDeals() {
                 <div className="head-tag">
                   <span className='px-5 py-2 text-white font-semibold text-xs' style={{background: `${item.color}`}}>{item.tag}</span>
                 </div>
-                <div className="middle-content items grid [grid-template-columns:70%_28%] gap-[2%] px-6">
+                <div className="middle-content items grid gap-3 lg:[grid-template-columns:70%_28%] lg:gap-[2%] px-6">
                   <div className='w-full flex flex-col gap-2'>
                     <p className="title font-primary text-lg font-semibold">{item.name}</p>
                     <p className='title font-secondary text-sm text-gray-600'>{item.description}</p>
                   </div>
-                  <div className='w-full flex flex-col gap-2 font-secondary'>
-                    <span className='px-4 py-2 bg-amber-600 text-xs text-white flex items-center justify-center'>Save Upto {item.saving}</span>
-                    <Link className='px- py-2  border-1 border-black text-xs flex items-center justify-center' >Shop Now</Link>
+                  <div className='w-full flex mt-5 flex-col gap-2 font-secondary'>
+                    <span className='px-4 py-3 bg-amber-600 text-xs text-white flex items-center justify-center'>Save Upto {item.saving}</span>
+                    <Link className='px- py-3  border-1 border-gray-800 text-xs flex items-center justify-center text-gray-800' >Shop Now</Link>
                   </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@ export default function SpecialDeals() {
         </div>
         <Link to="/special-deals" className='hover:underline text-sm'>View More Special Deals</Link>
       </div>
-      <div><img src="/imgs/special-deal.jpg" alt="specialDeal-image" className='text-xs' /></div>
+      <div className='mt-5 lg:mt-0'><img src="/imgs/special-deal.jpg" alt="specialDeal-image" className='text-xs' /></div>
 
     </div>
   )

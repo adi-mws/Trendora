@@ -10,12 +10,15 @@ import CustomerWishlist from "./components/customer/CustomerWishlist";
 import CustomerCart from "./components/customer/CustomerCart";
 import CustomerSubscriptions from "./components/customer/CustomerSubscriptions";
 import CustomerSupport from "./components/customer/CustomerSupport";
-
+import ProductsPage from "./pages/ProductsPage";
+import Sidebar from "./components/primary/Sidebar";
 const RoutesList = () => (
   <>
     <Routes>
       <Route path="/" element={<MainLayout />}>
         <Route path="/" element={<HomePage />} />
+    
+        <Route path="/products" element={<ProductsPage />} />
       </Route>
       <Route path="/account" element={<CustomerDashboardLayout />} >
         <Route index element={<CustomerProfile />} />
