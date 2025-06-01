@@ -236,10 +236,10 @@ export default function CustomerOrders() {
 
 
   return (
-    <div className='CustomerOrders flex flex-col gap-5 p-5'>
-      <div className="your-orders-head flex justify-between items-center">
-        <p className="title font-primary text-xl ">Your Orders</p>
-        <input type="search" onChange={(e) => setSearchValue(e.target.value)} placeholder='Search by Order Id or Product Name' className='w-100 text-xs p-3 bg-gray-100 rounded-lg outline-none' />
+    <div className='CustomerOrders flex flex-col gap-5 p-1 md:p-5'>
+      <div className="your-orders-head flex p-4 md:p-0 md:flex-row flex-col md:gap-0 gap-4 justify-between md:items-center">
+        <p className="title font-primary md:text-xl text-lg">Your Orders</p>
+        <input type="search" onChange={(e) => setSearchValue(e.target.value)} placeholder='Search by Order Id or Product Name' className='md:w-100 w-80 text-xs p-3 bg-gray-100 rounded-lg outline-none' />
       </div>
       <div className="orders-container w-full flex flex-col gap-1">
         {filteredOrders.length == 0 ?

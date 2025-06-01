@@ -12,12 +12,14 @@ import CustomerSubscriptions from "./components/customer/CustomerSubscriptions";
 import CustomerSupport from "./components/customer/CustomerSupport";
 import ProductsPage from "./pages/ProductsPage";
 import Sidebar from "./components/primary/Sidebar";
+import ScrollToTop from "./components/primary/ScrollToTop";
 const RoutesList = () => (
   <>
+    <ScrollToTop />
     <Routes>
       <Route path="/" element={<MainLayout />}>
         <Route path="/" element={<HomePage />} />
-    
+
         <Route path="/products" element={<ProductsPage />} />
       </Route>
       <Route path="/account" element={<CustomerDashboardLayout />} >

@@ -211,7 +211,7 @@ export default function () {
     return (
         <div className='product-section flex flex-col gap-5 mt-15'>
             <div className="title text-xl">Products For You</div>
-            <div className="products-card-container flex gap-0.5 sm:gap-2 flex-wrap items-center w-full">
+            <div className="products-card-container flex gap-1 sm:gap-2 flex-wrap items-center w-full">
                 {
                     products.map((product, index) => {
                         return <ProductCardVertical product={product}/>
