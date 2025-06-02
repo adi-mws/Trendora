@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import ProductCardVertical from '../components/cards/ProductCardVertical';
-
+import { Link } from 'react-router-dom';
 export default function ProductsPage() {
 
     const product_items = [
@@ -194,10 +194,61 @@ export default function ProductsPage() {
     }, [])
     return (
         <div className='products-page flex flex-col'>
-            <div className='flex flex-col'>
-                
+            <div className='flex flex-col '>
+                <div className="searchbar mt-5 input-wrapper flex gap-4 items-center px-5 py-3 bg-gray-50">
+                    <input type="search" placeholder='Search for products' className='text-md outline-none w-full' />
+                    <img src="/icons/search-normal.png" alt="search-icon" className='text-xs' />
+                </div>
+
+                <div className="filters flex mt-5 flex-col">
+                    <p className="title text-lg font-primary">Filters</p>
+                    <div className="filters-item flex w-full gap-5 justify-center items-center">
+                        
+                        <div className="category flex flex-col">
+                            <p className='flex items-center gap-2 text-sm'>Category <i className="fas fa-chevron-down"></i></p>
+                            <ul className='menu-item'>
+                                <li>
+                                    <Link></Link>
+                                </li>
+                            </ul>
+                        </div>
+                         <div className="category flex flex-col">
+                            <p className='flex items-center gap-2 text-sm'>Room/Space <i className="fas fa-chevron-down"></i></p>
+                            <ul className='menu-item'>
+                                <li>
+                                    <Link></Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="category flex flex-col">
+                            <p className='flex items-center gap-2 text-sm'>Material <i className="fas fa-chevron-down"></i></p>
+                            <ul className='menu-item'>
+                                <li>
+                                    <Link></Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="category flex flex-col">
+                            <p className='flex items-center gap-2 text-sm'>Style <i className="fas fa-chevron-down"></i></p>
+                            <ul className='menu-item'>
+                                <li>
+                                    <Link></Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="category flex flex-col">
+                            <p className='flex items-center gap-2 text-sm'>Room/Space <i className="fas fa-chevron-down"></i></p>
+                            <ul className='menu-item'>
+                                <li>
+                                    <Link></Link>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-            <div className='container flex flex-wrap gap-2 flex-1/5'>
+            <div className='container flex flex-wrap gap-2 mt-5 flex-1/5'>
                 {products.map((product, index) => (<ProductCardVertical product={product} />
                 ))}
             </div>
