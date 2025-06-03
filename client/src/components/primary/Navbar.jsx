@@ -87,7 +87,7 @@ export default function Navbar() {
                 <div className='flex w-full justify-center align-center gap-12 text-sm py-2'>
                     {Object.keys(navItems).map((item, index) => {
                         return <p key={index} onMouseOver={() => { setShowNavDropdown(true); setSelectedNav(item) }} className={`hover:text-orange-600 ${selectedNav=== item && showNavDropdown ? 'text-orange-600' : 'text-gray-700'} cursor-pointer flex gap-2 text-xs items-center font-semibold`}>{item}</p>
-                    })}
+                    })}  
 
                 </div>
                 <ul className={`dropdown w-full shadow-s z-400 shadow-gray-100 max-h-40 absolute top-8 py-6 px-8 text-2xs text-gray-600 bg-white ${showNavDropdown ? 'flex' : 'hidden'} flex-col flex-wrap align-middle gap-2`} onMouseOver={() => setShowNavDropdown(true)} onMouseOut={() => setShowNavDropdown(false)}>
