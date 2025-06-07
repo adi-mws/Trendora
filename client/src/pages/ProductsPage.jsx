@@ -1,257 +1,136 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProductCardVertical from '../components/cards/ProductCardVertical';
-import { Link } from 'react-router-dom';
+
 export default function ProductsPage() {
+  const product_items = [
+    {
+      name: 'TIED RIBBONS Cycle Shape Flower Vase...',
+      price: 2000,
+      mrp: 2500,
+      discount: '20%',
+      image: '/imgs/cycle-decoration.jpg',
+      rating: 3.5,
+      wishlist: false,
+      category: 'Decor',
+      room: 'Living Room',
+      material: 'Metal',
+      style: 'Vintage'
+    },
+    {
+      name: 'Sunshine Lighting Table Lamp...',
+      price: 1800,
+      mrp: 2200,
+      discount: '18%',
+      image: '/imgs/cycle-decoration.jpg',
+      rating: 4,
+      wishlist: false,
+      category: 'Lighting',
+      room: 'Bedroom',
+      material: 'Metal',
+      style: 'Modern'
+    },
+    {
+      name: 'Elegant Wooden Wall Clock...',
+      price: 1500,
+      mrp: 1900,
+      discount: '21%',
+      image: '/imgs/lamp.jpg',
+      rating: 4.2,
+      wishlist: false,
+      category: 'Wall Decor',
+      room: 'Living Room',
+      material: 'Wood',
+      style: 'Classic'
+    },
+    // Add more products with consistent keys
+  ];
 
-    const product_items = [
-        {
-            name: 'TIED RIBBONS Cycle Shape Flower Vase with Peonies Bunches for Home Decor Center Table Bedroom Living Room Office Bathroom Decorative Gift Items (19 cm x 21 cm)',
-            price: 2000,
-            mrp: 2500,
-            discount: '20%',
-            image: '/imgs/cycle-decoration.jpg',
-            rating: 3.5,
-            wishlist: false
-        },
-        {
-            name: 'Sunshine Lighting Table Lamp with Adjustable Brightness and Sleek Metal Base for Living Room and Bedroom (20W LED)',
-            price: 1800,
-            mrp: 2200,
-            discount: '18%',
-            image: '/imgs/cycle-decoration.jpg',
-            rating: 4,
-            wishlist: false
-        },
-        {
-            name: 'Elegant Wooden Wall Clock with Roman Numerals and Quartz Movement for Home and Office (Size: 30 cm)',
-            price: 1500,
-            mrp: 1900,
-            discount: '21%',
-            image: '/imgs/lamp.jpg',
-            rating: 4.2,
-            wishlist: false
-        },
-        {
-            name: 'Rustic Ceramic Flower Pot with Intricate Handcrafted Patterns for Indoor Plants and Garden Decor (Set of 2)',
-            price: 1200,
-            mrp: 1600,
-            discount: '25%',
-            image: '/imgs/cycle-decoration.jpg',
-            rating: 3.8,
-            wishlist: false
-        },
-        {
-            name: 'Vintage Wooden Wall Shelf with Three Tiers and Iron Frame for Kitchen, Living Room, and Bedroom Storage',
-            price: 2500,
-            mrp: 3000,
-            discount: '17%',
-            image: '/imgs/lamp.jpg',
-            rating: 4.5,
-            wishlist: false
-        },
-        {
-            name: 'Classic Metal Candle Holder Stand for Pillar Candles, Tealights, and Home Decor (Antique Gold Finish)',
-            price: 900,
-            mrp: 1200,
-            discount: '25%',
-            image: '/imgs/cycle-decoration.jpg',
-            rating: 4,
-            wishlist: false
-        },
-        {
-            name: 'Decorative Wall Mirror with Wooden Frame for Bedroom, Living Room, and Entryway (Size: 60 cm x 40 cm)',
-            price: 2200,
-            mrp: 2700,
-            discount: '19%',
-            image: '/imgs/lamp.jpg',
-            rating: 4.3,
-            wishlist: false
-        },
-        {
-            name: 'Artistic Abstract Painting Canvas Wall Art for Home and Office Decor (Size: 24 in x 36 in)',
-            price: 3500,
-            mrp: 4000,
-            discount: '12%',
-            image: '/imgs/cycle-decoration.jpg',
-            rating: 4.1,
-            wishlist: false
-        },
-        {
-            name: 'Handcrafted Wooden Jewellery Box with Brass Inlay and Velvet Lining for Storing Precious Accessories (Size: 8 in)',
-            price: 1300,
-            mrp: 1700,
-            discount: '24%',
-            image: '/imgs/lamp.jpg',
-            rating: 3.9,
-            wishlist: false
-        },
-        {
-            name: 'Modern LED Wall Light Sconce with Warm White Glow for Hallways, Living Rooms, and Bedrooms (10W)',
-            price: 1750,
-            mrp: 2100,
-            discount: '17%',
-            image: '/imgs/cycle-decoration.jpg',
-            rating: 4.4,
-            wishlist: false
-        },
-        {
-            name: 'Premium Handwoven Cotton Table Runner with Tassels for Dining Table and Sideboard (Size: 72 in x 14 in)',
-            price: 1100,
-            mrp: 1400,
-            discount: '21%',
-            image: '/imgs/lamp.jpg',
-            rating: 4.2,
-            wishlist: false
-        },
-        {
-            name: 'Antique Brass Photo Frame with Intricate Floral Design for 5x7 inch Pictures and Home Decor',
-            price: 850,
-            mrp: 1100,
-            discount: '23%',
-            image: '/imgs/cycle-decoration.jpg',
-            rating: 3.7,
-            wishlist: false
-        },
-        {
-            name: 'Vintage Metal Lantern with Glass Panels for Tealights, Outdoor, and Indoor Decor (Size: 12 in)',
-            price: 1600,
-            mrp: 2000,
-            discount: '20%',
-            image: '/imgs/lamp.jpg',
-            rating: 4.1,
-            wishlist: true
-        },
-        {
-            name: 'Luxurious Velvet Cushion Cover with Embroidered Patterns for Sofa, Bedroom, and Living Room (16x16 in)',
-            price: 600,
-            mrp: 800,
-            discount: '25%',
-            image: '/imgs/cycle-decoration.jpg',
-            rating: 3.9,
-            wishlist: false
-        },
-        {
-            name: 'Ceramic Mug Set with Hand-painted Designs for Coffee and Tea Lovers (Set of 4, 350ml each)',
-            price: 950,
-            mrp: 1200,
-            discount: '20%',
-            image: '/imgs/lamp.jpg',
-            rating: 4,
-            wishlist: false
-        },
-        {
-            name: 'Elegant Glass Vase with Gold Rim for Flower Arrangements and Home Centerpieces (Size: 25 cm)',
-            price: 1400,
-            mrp: 1800,
-            discount: '22%',
-            image: '/imgs/cycle-decoration.jpg',
-            rating: 4.3,
-            wishlist: false
-        },
-        {
-            name: 'Traditional Brass Urli Bowl with Intricate Carvings for Floating Flowers and Festive Decor (Size: 10 in)',
-            price: 2000,
-            mrp: 2500,
-            discount: '20%',
-            image: '/imgs/lamp.jpg',
-            rating: 4.2,
-            wishlist: false
-        },
-        {
-            name: 'Stylish Jute Storage Basket with Leather Handles for Laundry, Toys, and Home Organization (Size: 40 cm)',
-            price: 1250,
-            mrp: 1600,
-            discount: '22%',
-            image: '/imgs/cycle-decoration.jpg',
-            rating: 4,
-            wishlist: false
-        },
-        {
-            name: 'Handmade Macrame Wall Hanging Tapestry for Boho Bedroom and Living Room Decor (Size: 35 in)',
-            price: 1750,
-            mrp: 2200,
-            discount: '20%',
-            image: '/imgs/lamp.jpg',
-            rating: 4.5,
-            wishlist: false
-        },
-        {
-            name: 'Classic Wooden Magazine Rack with Carved Design for Living Room, Bedroom, and Office',
-            price: 1900,
-            mrp: 2300,
-            discount: '17%',
-            image: '/imgs/cycle-decoration.jpg',
-            rating: 4.1,
-            wishlist: false
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filters, setFilters] = useState({
+    category: '',
+    room: '',
+    material: '',
+    style: ''
+  });
+
+  useEffect(() => {
+    setProducts(product_items);
+    setFilteredProducts(product_items);
+  }, []);
+
+  useEffect(() => {
+    let updated = [...products];
+    Object.keys(filters).forEach((key) => {
+      if (filters[key]) {
+        updated = updated.filter((p) => p[key] === filters[key]);
+      }
+    });
+    setFilteredProducts(updated);
+  }, [filters, products]);
+
+  const getUniqueValues = (field) => {
+    return [...new Set(products.map((p) => p[field]))];
+  };
+
+  const FilterDropdown = ({ label, field }) => (
+    <div className="category flex flex-col items-center">
+      <p className="flex items-center gap-2 text-sm">{label}</p>
+      <select
+        className="border w-30 p-1 rounded mt-1 text-sm"
+        onChange={(e) =>
+          setFilters((prev) => ({ ...prev, [field]: e.target.value }))
         }
-    ];
+        value={filters[field]}
+      >
+        <option value="">All</option>
+        {getUniqueValues(field).map((value, idx) => (
+          <option value={value} key={idx}>{value}</option>
+        ))}
+      </select>
+    </div>
+  );
 
-
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        setProducts(product_items)
-    }, [])
-    return (
-        <div className='products-page flex flex-col'>
-            <div className='flex flex-col '>
-                <div className="searchbar mt-5 input-wrapper flex gap-4 items-center px-5 py-3 bg-gray-50">
-                    <input type="search" placeholder='Search for products' className='text-md outline-none w-full' />
-                    <img src="/icons/search-normal.png" alt="search-icon" className='text-xs' />
-                </div>
-
-                <div className="filters flex mt-5 flex-col">
-                    <p className="title text-lg font-primary">Filters</p>
-                    <div className="filters-item flex w-full gap-5 justify-center items-center">
-                        
-                        <div className="category flex flex-col">
-                            <p className='flex items-center gap-2 text-sm'>Category <i className="fas fa-chevron-down"></i></p>
-                            <ul className='menu-item'>
-                                <li>
-                                    <Link></Link>
-                                </li>
-                            </ul>
-                        </div>
-                         <div className="category flex flex-col">
-                            <p className='flex items-center gap-2 text-sm'>Room/Space <i className="fas fa-chevron-down"></i></p>
-                            <ul className='menu-item'>
-                                <li>
-                                    <Link></Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="category flex flex-col">
-                            <p className='flex items-center gap-2 text-sm'>Material <i className="fas fa-chevron-down"></i></p>
-                            <ul className='menu-item'>
-                                <li>
-                                    <Link></Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="category flex flex-col">
-                            <p className='flex items-center gap-2 text-sm'>Style <i className="fas fa-chevron-down"></i></p>
-                            <ul className='menu-item'>
-                                <li>
-                                    <Link></Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="category flex flex-col">
-                            <p className='flex items-center gap-2 text-sm'>Room/Space <i className="fas fa-chevron-down"></i></p>
-                            <ul className='menu-item'>
-                                <li>
-                                    <Link></Link>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div className='container flex flex-wrap gap-2 mt-5 flex-1/5'>
-                {products.map((product, index) => (<ProductCardVertical product={product} />
-                ))}
-            </div>
+  return (
+    <div className="products-page flex flex-col">
+      <div className="flex flex-col">
+        <div className="searchbar mt-5 input-wrapper flex gap-4 items-center px-5 py-3 bg-gray-50">
+          <input
+            type="search"
+            placeholder="Search for products"
+            className="text-md outline-none w-full"
+          />
+          <img src="/icons/search-normal.png" alt="search-icon" className="text-xs" />
         </div>
-    )
-} 
+
+        <div className="filters flex mt-5 flex-col px-5">
+          <div className="filters-item flex w-full gap-5 justify-center items-center flex-wrap">
+            <FilterDropdown label="Category" field="category" />
+            <FilterDropdown label="Room/Space" field="room" />
+            <FilterDropdown label="Material" field="material" />
+            <FilterDropdown label="Style" field="style" />
+          </div>
+
+          <button
+            onClick={() =>
+              setFilters({ category: '', room: '', material: '', style: '' })
+            }
+            className="mt-5 bg-red-100 text-xs px-3 py-1 rounded self-center"
+          >
+            Clear All Filters
+          </button>
+        </div>
+      </div>
+
+      <div className="container flex flex-wrap gap-4 mt-5 px-5">
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product, index) => (
+            <ProductCardVertical product={product} key={index} />
+          ))
+        ) : (
+          <p className="text-center w-full py-10 text-gray-500">No products match the selected filters.</p>
+        )}
+      </div>
+    </div>
+  );
+}
